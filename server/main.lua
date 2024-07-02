@@ -30,8 +30,8 @@ AddEventHandler('qb-phone:server:GiveInvoice', function()
 	local Player = QBCore.Functions.GetPlayer(src)
     if Player then
         exports.oxmysql:insert('INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',
-        {Player.PlayerData.citizenid, 100, "Garaj", "Vale", "Garaj"})
+        {Player.PlayerData.citizenid, 100, "Garage", "Valet", "Garage"})
         TriggerClientEvent('qb-phone:RefreshPhone', Player.PlayerData.source)
-        TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'Yeni Fatura Alındı')
+        TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'New Invoice Received')
     end
 end)
